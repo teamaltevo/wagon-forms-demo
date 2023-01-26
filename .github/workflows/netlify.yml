@@ -1,0 +1,19 @@
+name: Deploy to Netlify
+on:
+  workflow_dispatch:
+  push:
+      branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: npm install
+      - name: Build
+        run: npm run build:prod
+      - name: Deploy to netlify
+        env:
+            NETLIFY_SITE_ID: c1d78a40-9105-47cc-87a3-ec75de7f6b24
+            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: npx netlify deploy --dir=dist --prod --message="${{ github.event.head_commit.message }}"
