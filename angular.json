@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wagon-vw-demo": {
+    "wagon-forms-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wagon-vw-demo",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "wagon-vw-demo:build:production"
+              "browserTarget": "wagon-forms-demo:build:production"
             },
             "development": {
-              "browserTarget": "wagon-vw-demo:build:development"
+              "browserTarget": "wagon-forms-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wagon-vw-demo:build"
+            "browserTarget": "wagon-forms-demo:build"
           }
         },
         "test": {
