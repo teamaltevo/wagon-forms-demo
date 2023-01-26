@@ -1,0 +1,5 @@
+<ng-container *ngIf="viewModel && viewModel.hasExplicitValidation">
+  <label class="label pb-0" *ngFor="let error of (viewModel.errors$|async)">
+    <span class="label-text-alt text-error">{{ error }}</span>
+  </label>
+</ng-container>

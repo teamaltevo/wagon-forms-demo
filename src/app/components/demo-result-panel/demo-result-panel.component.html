@@ -1,0 +1,18 @@
+<ng-container *ngIf="resultObject">
+<div class="prose mt-6 mb-4">
+  <h3>Here is the result of this form submission</h3>
+</div>
+<div class="mockup-code bg-black text-sm mb-6">
+  <pre [class]="resultObject.type.includes('Error') ? 'bg-error text-black' :  'bg-success text-black'">
+
+    {{resultObject.type}}
+  </pre>
+  <div class="pl-6 text-sm">
+    <pre>
+      <code>
+{{result}}
+      </code>
+    </pre>
+  </div>
+</div>
+</ng-container>

@@ -1,0 +1,17 @@
+<ng-container *ngIf="viewModel">
+  <div class="form-control w-full">
+    <app-field-label [viewModel]="viewModel"></app-field-label>
+    <select
+      class="select select-bordered bg-base-200 font-normal text-md"
+      [attr.aria-label]="viewModel.label"
+      [required]="viewModel.required"
+      [(ngModel)]="viewModel.value"
+      [class.border-error]="!(viewModel.isValid$ |async) && viewModel.hasExplicitValidation"
+      [name]="viewModel.name"
+      [disabled]="viewModel.disabled || viewModel.readonly">
+      <option disabled selected *ngIf="viewModel.placeholder">{{viewModel.placeholder}}</option>
+      <option *ngFor="let option of viewModel.options" [ngValue]="option.value">{{option.label}}</option>
+    </select>
+    <app-field-errors [viewModel]="viewModel"></app-field-errors>
+  </div>
+</ng-container>

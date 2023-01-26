@@ -1,0 +1,16 @@
+<ng-container *ngIf="viewModel">
+  <div class="form-control w-full mb-2">
+    <app-field-label [viewModel]="viewModel"></app-field-label>
+    <input
+      [type]="viewModel.type"
+      [(ngModel)]="inputValue"
+      [required]="viewModel.required"
+      [name]="viewModel.name"
+      [class.border-error]="!(viewModel.isValid$ |async) && viewModel.hasExplicitValidation"
+      [readonly]="viewModel.readonly"
+      [disabled]="viewModel.disabled"
+      [placeholder]="viewModel.placeholder ?? ''"
+      class="input input-bordered bg-base-200 placeholder-opacity-60 w-full"/>
+    <app-field-errors [viewModel]="viewModel"></app-field-errors>
+  </div>
+</ng-container>

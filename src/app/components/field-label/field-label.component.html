@@ -1,0 +1,9 @@
+<label class="label" *ngIf="viewModel && viewModel.label">
+  <div class="flex flex-col">
+    <div class="label-text font-bold">
+      {{viewModel.label}}
+      <span *ngIf="viewModel.required" class="text-sm text-red-400">*</span>
+    </div>
+    <p *ngIf="viewModel.hint" class="text-sm mt-1 italic">{{viewModel.hint}}</p>
+  </div>
+</label>

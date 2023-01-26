@@ -1,0 +1,14 @@
+<div class="form-control" *ngIf="viewModel">
+  <app-field-label [viewModel]="viewModel"></app-field-label>
+  <div class="flex flex-row gap-4 mt-3">
+    <input type="checkbox"
+    class="toggle mb-4 ml-1 toggle-primary"
+    (change)="onChange($event)"
+    [checked]="viewModel.value"
+    [disabled]="viewModel.disabled || viewModel.readonly"/>
+    <span class="italic opacity-80" *ngIf="viewModel.placeholder">
+      {{viewModel.placeholder}}
+    </span>
+  </div>
+  <app-field-errors [viewModel]="viewModel"></app-field-errors>
+</div>

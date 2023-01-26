@@ -1,0 +1,19 @@
+<div class="card w-full bg-base-100" *ngIf="viewModel">
+  <div class="card-body grid grid-cols-2 gap-2 gap-x-6">
+    <app-text-field [viewModel]="viewModel.firstName"></app-text-field>
+    <app-text-field [viewModel]="viewModel.lastName"></app-text-field>
+    <app-number-field [viewModel]="viewModel.age"></app-number-field>
+    <app-text-field [viewModel]="viewModel.email"></app-text-field>
+    <app-text-field [viewModel]="viewModel.password"></app-text-field>
+    <app-text-field [viewModel]="viewModel.passwordConfirmation"></app-text-field>
+    <app-select-field [viewModel]="viewModel.employment"></app-select-field>
+    <app-toggle [viewModel]="viewModel.subscribe"></app-toggle>
+    <div class="col-span-2 flex justify-end items-end">
+      <button (click)="submit()" class="btn btn-primary mb-2">
+        Submit this form
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-result-panel [resultObject]="lastResult"></app-result-panel>
