@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ErrorMessageFactoryProvider, FieldViewModel, FormErrors } from '@writools/wagon-forms';
+import { ErrorMessageFactoryBuilder, FieldViewModel, FormErrors } from '@writools/wagon-forms';
 import { Observable } from 'rxjs';
 
 @Pipe({
@@ -12,7 +12,7 @@ export class ErrorMessagePipe implements PipeTransform {
   }
 }
 
-const errorMessageFactory = ErrorMessageFactoryProvider({
+const errorMessageFactory = ErrorMessageFactoryBuilder({
   [FormErrors.REQUIRED_FIELD]: "This field is required",
   [FormErrors.INVALID_EMAIL_ADDRESS]: "This is not a valid email address",
   [FormErrors.MAX_LENGTH_OVERFLOW] : "The maximum length is {maxLength}",
