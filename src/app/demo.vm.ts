@@ -1,4 +1,4 @@
-import { CheckboxViewModel, EmailFieldViewModel, FormViewModel, MirrorFieldViewModel, NumericFieldViewModel, PasswordFieldViewModel, SelectViewModel, TextFieldViewModel } from "@writools/wagon-forms";
+import { CheckboxViewModel, EmailFieldViewModel, FileInputViewModel, FormViewModel, MirrorFieldViewModel, NumericFieldViewModel, PasswordFieldViewModel, SelectViewModel, TextFieldViewModel } from "@writools/wagon-forms";
 
 export interface DemoInterface {
   firstName: string;
@@ -82,6 +82,16 @@ export class DemoFormViewModel extends FormViewModel<DemoInterface> {
     ]
   })
 
+  fileInput = new FileInputViewModel({
+    name: 'fileInput',
+    required: false,
+    label: 'File input',
+    hint: 'Allowed file types: .jpg, .png',
+    placeholder: 'Select a file',
+    allowedExtensions: ['jpg', 'png'],
+    maxSizeKb: 1024
+  });
+
   public getInputs() {
     return [
       this.firstName,
@@ -92,6 +102,7 @@ export class DemoFormViewModel extends FormViewModel<DemoInterface> {
       this.age,
       this.subscribe,
       this.employment,
+      this.fileInput
     ];
   }
 }

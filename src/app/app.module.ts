@@ -16,6 +16,8 @@ import { FieldErrorsComponent } from './components/field-errors/field-errors.com
 import { DemoFormComponent } from './components/demo-form/demo-form.component';
 import { DemoFormSettingsComponent } from './components/demo-form-settings/demo-form-settings.component';
 import { DemoResultPanelComponent } from './components/demo-result-panel/demo-result-panel.component';
+import { FileInputComponent } from './components/file-input/file-input.component';
+import { ErrorMessagePipe } from './pipes/error-message.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { DemoResultPanelComponent } from './components/demo-result-panel/demo-re
     NumberFieldComponent,
     DemoFormComponent,
     DemoFormSettingsComponent,
-    DemoResultPanelComponent
+    DemoResultPanelComponent,
+    FileInputComponent,
+    ErrorMessagePipe
   ],
   imports: [
     BrowserModule,
